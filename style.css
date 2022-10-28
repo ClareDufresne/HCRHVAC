@@ -1,0 +1,651 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(3, 3, 6);
+}
+
+li, a, .title{
+    font-weight: 500;
+    font-size: 24px;
+    font-family: Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+    color: rgb(64, 72, 156);
+}
+
+.headerContainer{
+    width: 100%;
+    height: 10vh;
+    padding-left: 5%;
+    padding-right: 8%;
+    box-sizing: border-box;
+    position: fixed;
+    background-color: white;
+    z-index: 98;
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+}
+
+.toggleButton{
+    position: absolute;
+    top: 3.4vh;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 31px;
+    height: 21px;
+
+    user-select: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+.toggleButton .bar{
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 3px;
+    transition: 0.4s;
+    z-index: 100;
+}
+
+.toggleButton:hover span:nth-child(2){
+    transform: translateX(9px);
+    background-color: rgb(64, 72, 156);
+}
+
+.toggleButton.is-active span:nth-child(1){
+    transform: translate(0px, 9px) rotate(45deg);
+}
+.toggleButton.is-active span:nth-child(2){
+    opacity: 0;
+}
+.toggleButton.is-active span:nth-child(3){
+    transform: translate(0px, -9px) rotate(-45deg);
+}
+
+.toggleButton.toggleButton.is-active:hover span{
+    background-color: rgb(64, 116, 156);
+}
+
+
+
+.logo{
+    height: 7vh;
+    cursor: pointer;
+}
+
+.navLinks{
+    list-style: none;
+}
+
+.navLinks li{
+    display: inline-block;
+    padding: 0 20px;
+    padding-top: 12px;
+}
+
+.navLinks li a:hover{
+    background-color: rgb(64, 72, 156);
+    border-radius: 5px;
+    padding: 3px 4px;
+    margin-left: -8px;
+    color: white;
+}
+
+.line{
+    margin: 0 auto;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(64, 116, 156);
+    position: fixed;
+    top: 10vh;
+    z-index: 50;
+}
+
+.title{
+    text-align: center;
+}
+
+.heroContainer{
+    display: flex;
+    padding-left: calc(2vw + 12px);
+}
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15vh 0;
+    padding-top: 20vh;
+    animation: fadeIn 800ms;
+}
+#hcr{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 17vw;
+    color: rgb(38, 144, 183);
+    text-shadow: -1px 1px 3px black;
+}
+#mech{
+    font-family: Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 7vw;
+    color: rgb(36, 55, 139);
+    text-shadow: -1px 1px 3px black;
+}
+
+.underline{
+    margin: 2rem auto;
+    width: 52%;
+    height: 3px;
+    background-color: rgb(64, 116, 156);
+}
+
+#slogan{
+    font-family: Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 3vw;
+    color: rgb(38, 144, 183);
+    text-shadow: -1px 1px 20px black;
+}
+
+.infoBox{
+    color: rgb(0, 0, 0);
+    overflow: auto;
+    align-items: center;
+    margin: auto;
+    background-color: #ffffff;
+    z-index: 10;
+    padding: 2vh 1vw;
+    animation: fadeIn 800ms;
+    width: 100%;
+}
+
+.commercialText, .ourApproachText{
+    font-family: Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 3vh;
+    position: relative;
+    z-index: 20;
+    padding: 5vh 2vw;
+}
+
+#serviceText{
+    width: 60%;
+    min-width: 450px;
+}
+
+.ourApproachText{
+    animation: slideIn 700ms;
+}
+
+.ourApproachContainer{
+    display: flex;
+    width: 70%;
+    min-width: 370px;
+}
+
+.ourApproachText{
+    text-align: center;
+    color: white;
+}
+
+.ourApproachText h1, .ourApproachText h2{
+    color: #c0c6e2
+}
+
+.infoImg{
+    float: right;
+    max-height: 65vh;
+    max-width: 100%;
+    margin-left: 2vw;
+    margin-bottom: 2vh;
+}
+
+#truckImg{
+    margin-top: 25px;
+}
+
+.footerContainer{
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+    background-color: rgb(3, 3, 6);
+}
+
+.contactInfo{
+    color: #ffffff;
+    font-family: Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 2vh;
+}
+
+#contracterCheckImg, #crawfordComplianceImg{
+    max-width: 45vw;
+    max-height: 11vh;
+    margin: 2vh 1vw;
+}
+
+.followContainer{
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    margin: 2vh;
+    font-family: Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.logos{
+    flex-direction: row;
+}
+.logos img{
+    max-width: 45vw;
+    max-height: 9vh;
+    margin-left: 1vw;
+}
+
+.padding{
+    padding-bottom: 15vh;
+    height: 1vh;
+    width: 100%;
+}
+h1{
+    font-size: 7vh;
+}
+
+.background, .lightbackground{
+    width: 50%;
+    height: 200vh;
+    background-color: rgb(21, 32, 82);
+    position: fixed;
+    z-index: -2;
+    right: 0;
+    top: -20px;
+    transform: rotate(30deg);
+}
+
+.lightbackground{
+    transform: rotate(-60deg);
+    background-color: rgb(66, 127, 188);
+    top: -800px;
+    right: -20px;
+    opacity: 50%;
+    animation: transitionInWidth 750ms;
+}
+
+.background{
+    animation: transitionInHeight 750ms;
+}
+
+.typeBlock{
+    width: 43%;
+    height: 90px;
+    background-color: white;
+    margin: 5px 0;
+    text-align: center;
+    padding-top: 4vh;
+    opacity: 85%;
+}
+
+.typeBlock:hover{
+    cursor: pointer;
+    opacity: 100%;
+}
+
+#b2, #b3{
+    padding-top: 2vh;
+}
+
+.serviceTypesText{
+    display: flex;
+    flex-wrap: wrap;
+    animation: fadeIn 1000ms;
+    padding-bottom: 5vh;
+}
+
+.serviceTypes{
+    width: 50%;
+    min-width: 375px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 15px 20px;
+    margin: auto;
+}
+
+.serviceTypes li{
+    color: #000000;
+    font-size: calc(12px + 1vw);
+}
+
+.servicePrompt{
+    display: flex;
+    width: 50%;
+    min-width: 350px;
+    flex-direction: column;
+    gap: 30px;
+    padding: 60px 20px;
+    margin: auto;
+    font-family: Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #ffffff;
+}
+
+.servicePrompt p{
+    font-size: calc(12px + 1.1vw);
+    text-align: center;
+}
+
+.commercialText h1{
+    text-align: center;
+    color: rgb(21, 32, 82);
+}
+
+#helpText{
+    color: rgb(107, 115, 155);
+    font-size: calc(12px + 1.8vw);
+}
+
+.serviceImg{
+    width: 40%;
+}
+
+#serviceInfo{
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 20px;
+}
+
+.contactContainer{
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1000ms;
+}
+
+#thankYou h1{
+    color: rgb(64, 72, 156);
+    font-family: Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 70px;
+}
+#thankYou{
+    text-align: center;
+    padding-top: 8vh;
+}
+#thankYou p{
+    font-size: 20px;
+}
+
+#backButton{
+    color: white;
+    font-size: 20px;
+}
+
+form{
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+form h3{
+    color: rgb(64, 72, 156);
+    font-family: Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    margin: 20px 0;
+}
+
+form input, form textarea{
+    border: 0;
+    margin: 10px 0;
+    padding: 20px;
+    outline: none;
+    background: #f5f5f5;
+    font-size: 16px;
+}
+
+form button{
+    padding: 15px;
+    background: rgb(90, 175, 214);
+    color: #ffffff;
+    font-size: 18px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    margin: 20px auto 0;
+    border-radius: 30px;
+}
+
+form button:hover{
+    cursor: pointer;
+    background: rgb(36, 113, 148);
+    transition-duration: 250ms;
+}
+
+#contactPadding{
+    padding-bottom: 9vh;
+    height: 1vh;
+    width: 100%;
+}
+
+.reviewsContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    font-family: Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.googleReviews{
+    color: white;
+    text-align: center;
+    width: 250px;
+    padding: 10px 0;
+}
+
+.googleReviews h1{
+    font-size: 2.2rem;
+    font-weight: 500;
+    padding: 10px 20px;
+}
+
+.googleReviews u:hover{
+    cursor: pointer;
+}
+
+.star{
+    width: 20px;
+}
+
+.testimonialContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.testimonial{
+    width: 500px;
+    height: 200px;
+    box-shadow: 2px 2px 30px black;
+    color: black;
+    background-color: white;
+    padding: 20px;
+    margin: 15px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.userImg{
+    width: 40px;
+    margin-right: 10px;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+}
+
+.name strong{
+    color: #3d3d3d;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.boxTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.comments p{
+    font-size: 0.9rem;
+    color: #4b4b4b;
+}
+
+.testimonial:hover{
+    transform: translateY(-10px);
+    transition: all ease 300ms;
+}
+
+@media (max-width: 880px){
+    .toggleButton{
+        display: flex;
+    }
+    .navLinks{
+        display: none;
+    }
+    .navLinks.is-active{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 1vh;
+        right: 1vh;
+        width: 220px;
+        padding: 1.5vh;
+        z-index: 100;
+        margin-top: 7vh;
+    }
+    .navLinks li{
+        margin: auto;
+        margin-top: 10px;
+        background-color: white;
+        box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.2);
+        opacity: 95%;
+        width: 100%;
+        text-align: center;
+        padding: 1vh 0;
+    }
+
+    .lightbackground{
+        right: -50px;
+        top: -530px;
+    }
+    .background{
+        top: -100px;
+        right: -50px;
+        width: 80%;
+    }
+
+    .contactContainer{
+        margin-top: 6vh;
+    }
+
+    .infoBox{
+        animation: none;
+        padding: 0 10px;
+    }
+
+    #homeImg{
+        float: none;
+        margin-left: 18px;
+    }
+    #truckImg{
+        margin-top: -10px;
+    }
+
+    #serviceInfo{
+        padding: 20px 20px;
+        padding-top: 10px;
+    }
+
+    .serviceImg{
+        display: none;
+    }
+
+    #serviceText{
+        min-width: 0;
+        width: 100%;
+    }
+
+    .hero{
+        padding-bottom: 12vh;
+        animation: none;
+    }
+
+    .serviceTypesText{
+        padding-bottom: 40px;
+    }
+
+    .reviewsContainer{
+        overflow: hidden;
+        display: flex;
+        padding-left: 0;
+    }
+
+    .testimonial{
+        height: auto;
+    }
+}
+
+@keyframes transitionInWidth {
+    from{
+        width: 0;
+    }
+    
+}
+
+@keyframes transitionInHeight {
+    from{
+        right: -5000px;
+    }
+    
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from{
+        left: -2000px;
+    }
+    to{
+        left: 0;
+    }
+}
